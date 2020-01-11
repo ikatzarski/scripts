@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 log_action() {
     echo "===> [`date`] === $1"
