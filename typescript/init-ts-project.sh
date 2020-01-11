@@ -125,7 +125,7 @@ echo '{
 log_result
 
 log_action 'Add prettier as dependency'
-yarn add prettier
+yarn add prettier --dev
 log_result
 
 
