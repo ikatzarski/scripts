@@ -1,5 +1,13 @@
-# Run from command line
+# Execute from command line
+
+- create a typescript project in your `current working directory` in a folder named `ts_app`
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/ikatzarski/scripts/master/typescript/init-ts-project.sh)
+curl -s https://raw.githubusercontent.com/ikatzarski/scripts/master/typescript/init-ts-project.sh | bash
+```
+
+- create a typescript project in your `current working directory` in a folder with a name of your choice, e.g., `playground`
+
+```bash
+curl -s https://raw.githubusercontent.com/ikatzarski/scripts/master/typescript/init-ts-project.sh | bash playground
 ```
