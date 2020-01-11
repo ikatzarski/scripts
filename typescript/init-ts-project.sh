@@ -124,7 +124,7 @@ echo '{
 }' > tslint.json
 log_result
 
-log_action 'Add prettier as dependency'
+log_action 'Add prettier as dev dependency'
 yarn add prettier --dev
 log_result
 
