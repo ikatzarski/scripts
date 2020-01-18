@@ -1,3 +1,7 @@
+# Prerequisites
+
+Please install [Yarn]https://yarnpkg.com/en/
+
 # Execute from command line
 
 - create a typescript project in your `current working directory` in a folder named `ts_app`
