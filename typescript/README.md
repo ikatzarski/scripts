@@ -18,4 +18,4 @@ curl -s https://raw.githubusercontent.com/ikatzarski/scripts/master/typescript/i
 
 ## Not working
 
-The TSLint and Prettier do not currently work in VSCode. WebStorm picks up the linter and Prettier configuration succesfully.
+TSLint and Prettier do not currently work in VSCode. WebStorm picks up the linter and Prettier configuration files succesfully.
