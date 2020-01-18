@@ -1,6 +1,6 @@
 # Prerequisites
 
-Please install [Yarn]https://yarnpkg.com/en/
+Please install [Yarn](https://yarnpkg.com/en/)
 
 # Execute from command line
 
