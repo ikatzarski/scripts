@@ -118,7 +118,8 @@ echo '{
     "jsRules": {},
     "rules": {
         "quotemark": [true, "single", "avoid-escape", "avoid-template"],
-        "no-console": [false]
+        "no-console": [false],
+        "interface-name": [true, "never-prefix"]
     },
     "rulesDirectory": []
 }' > tslint.json
