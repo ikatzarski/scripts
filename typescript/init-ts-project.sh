@@ -103,32 +103,33 @@ log_action 'Add ts-node as dev dependency'
 yarn add ts-node --dev
 log_result
 
-log_action 'Add tslint as dev dependency'
-yarn add tslint --dev
+log_action 'Add eslint, typescript eslint parser and plugin as dev dependencies'
+yarn add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
 log_result
 
-log_action 'Create tslint config file'
-touch tslint.json
+log_action 'Create eslint config file'
+touch .eslintrc
 log_result
 
-log_action 'Add tslint config to config file'
+log_action 'Add eslint config to config file'
 echo '{
-    "defaultSeverity": "error",
-    "extends": ["tslint:recommended"],
-    "jsRules": {},
-    "rules": {
-        "quotemark": [true, "single", "avoid-escape", "avoid-template"],
-        "no-console": [false],
-        "interface-name": [true, "never-prefix"]
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
     },
-    "rulesDirectory": []
-}' > tslint.json
+    "rules": {}
+}' > .eslintrc
 log_result
 
-log_action 'Add prettier as dev dependency'
-yarn add prettier --dev
+log_action 'Add prettier and the eslint prettier config and plugin as dev dependency'
+yarn add prettier eslint-config-prettier eslint-plugin-prettier --dev
 log_result
-
 
 log_action 'Create prettier config file'
 touch .prettierrc
@@ -150,7 +151,7 @@ touch src/index.ts
 log_result
 
 log_action 'Add sample code to typescript file'
-echo "export const sayHello = () => {
+echo "export const sayHello = (): string => {
     return 'hello';
 };
 

@@ -1,10 +1,10 @@
 ## Prerequisites
 
-Please install [Yarn](https://yarnpkg.com/en/)
+Install [Yarn](https://yarnpkg.com/en/)
 
-## Not working
+#### ESLint on VSCode
 
-TSLint and Prettier do not currently work in VSCode. WebStorm picks up the linter and Prettier configuration files succesfully.
+Install [ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Execute from command line
 
