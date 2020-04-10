@@ -138,7 +138,8 @@ log_result
 log_action 'Add prettier config to config file'
 echo '{
   "tabWidth": 2,
-  "singleQuote": true
+  "singleQuote": true,
+  "trailingComma": "none"
 }' > .prettierrc
 log_result
 
