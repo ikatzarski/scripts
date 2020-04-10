@@ -28,7 +28,7 @@ PASSED_ARGUMENT=$1
 set_app_folder() {
   if [ -z $PASSED_ARGUMENT ]
   then
-    echo 'ts_app'
+    echo 'ts-app'
   else
     echo $PASSED_ARGUMENT
   fi
