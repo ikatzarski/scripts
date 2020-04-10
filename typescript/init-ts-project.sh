@@ -163,7 +163,7 @@ echo "import { sayHello } from './index';
 
 describe('sayHello', () => {
   test('should return hello', () => {
-      expect(sayHello()).toBe('hello');
+    expect(sayHello()).toBe('hello');
   });
 });" > src/index.test.ts
 log_result
