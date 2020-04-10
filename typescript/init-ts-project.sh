@@ -52,12 +52,12 @@ log_action 'Enter app working directory'
 cd $WORKING_DIRECTORY
 log_result
 
-log_action 'Initialize yarn project'
-yarn init -y
+log_action 'Initialize project'
+npm init -y
 log_result
 
 log_action 'Add typescript as dev dependency'
-yarn add typescript --dev
+npm i -D typescript
 log_result
 
 log_action 'Create typescript config file'
@@ -79,7 +79,7 @@ echo '{
 log_result
 
 log_action 'Add jest, the jest types and ts-jest as dev dependencies'
-yarn add jest @types/jest ts-jest --dev
+npm i -D @types/jest ts-jest
 log_result
 
 log_action 'Create jest config file'
@@ -100,11 +100,11 @@ echo "module.exports = {
 log_result
 
 log_action 'Add ts-node as dev dependency'
-yarn add ts-node --dev
+npm i -D ts-node
 log_result
 
 log_action 'Add eslint, typescript eslint parser and plugin as dev dependencies'
-yarn add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
+npm i -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 log_result
 
 log_action 'Create eslint config file'
@@ -128,7 +128,7 @@ echo '{
 log_result
 
 log_action 'Add prettier and the eslint prettier config and plugin as dev dependency'
-yarn add prettier eslint-config-prettier eslint-plugin-prettier --dev
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 log_result
 
 log_action 'Create prettier config file'
@@ -169,9 +169,9 @@ describe('sayHello', () => {
 log_result
 
 log_action 'Run jest tests'
-yarn jest
+npx jest
 log_result
 
 log_action 'Run typescript file'
-yarn ts-node src/index.ts
+npx ts-node src/index.ts
 log_result
