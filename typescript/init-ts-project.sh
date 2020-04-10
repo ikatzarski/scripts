@@ -14,7 +14,7 @@ log_result() {
     fi
 }
 
-log_variable_content() {
+log_value_of_variable() {
     if [ -z $1 ]
     then
         echo "===> [`date`] === FAIL (Variable is Empty)"
@@ -34,15 +34,15 @@ set_app_folder() {
     fi
 }
 APP_FOLDER=`set_app_folder`
-log_variable_content $APP_FOLDER
+log_value_of_variable $APP_FOLDER
 
 log_action 'Get current working directory'
 CURRENT_DIRECTORY=`pwd`
-log_variable_content $CURRENT_DIRECTORY
+log_value_of_variable $CURRENT_DIRECTORY
 
 log_action 'Set app working directory'
 WORKING_DIRECTORY="$CURRENT_DIRECTORY/$APP_FOLDER"
-log_variable_content $WORKING_DIRECTORY
+log_value_of_variable $WORKING_DIRECTORY
 
 log_action 'Create app working directory'
 mkdir $WORKING_DIRECTORY
