@@ -56,7 +56,7 @@ log_action 'Initialize project'
 npm init -y
 log_result
 
-log_action 'Add typescript as dev dependency'
+log_action 'Install typescript as dev dependency'
 npm i -D typescript
 log_result
 
@@ -78,7 +78,7 @@ echo '{
 }' > tsconfig.json
 log_result
 
-log_action 'Add jest, the jest types and ts-jest as dev dependencies'
+log_action 'Install jest, the jest types and ts-jest as dev dependencies'
 npm i -D @types/jest ts-jest
 log_result
 
@@ -99,11 +99,11 @@ echo "module.exports = {
 };" > jest.config.js
 log_result
 
-log_action 'Add ts-node as dev dependency'
+log_action 'Install ts-node as dev dependency'
 npm i -D ts-node
 log_result
 
-log_action 'Add eslint, typescript eslint parser and plugin as dev dependencies'
+log_action 'Install eslint, typescript eslint parser and plugin as dev dependencies'
 npm i -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 log_result
 
@@ -127,7 +127,7 @@ echo '{
 }' > .eslintrc
 log_result
 
-log_action 'Add prettier and the eslint prettier config and plugin as dev dependency'
+log_action 'Install prettier and the eslint prettier config and plugin as dev dependencies'
 npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 log_result
 
