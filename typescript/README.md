@@ -18,14 +18,21 @@ Create a typescript project in your `current working directory` in a folder with
 curl -s https://raw.githubusercontent.com/ikatzarski/scripts/master/typescript/init-ts-project.sh | bash -s playground
 ```
 
-## Run .ts file
+## Run index.ts file
 
 ```bash
-npx ts-node src/index.ts
+npm start
+```
+
+## Run specific .ts file
+
+```bash
+cd src
+npx ts-node index.ts
 ```
 
 ## Run tets
 
 ```bash
-npx jest
+npm test
 ```

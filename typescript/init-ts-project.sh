@@ -52,8 +52,25 @@ log_action 'Enter app working directory'
 cd $WORKING_DIRECTORY
 log_result
 
-log_action 'Initialize project'
-npm init -y
+log_action 'Create package.json file'
+touch package.json
+log_result
+
+log_action 'Add project config to package.json'
+echo '{
+  "name": "'$APP_FOLDER'",
+  "version": "1.0.0",
+  "description": "ts app",
+  "repository": {},
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest",
+    "start": "npx ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}' > package.json
 log_result
 
 log_action 'Install typescript as dev dependency'
@@ -170,9 +187,9 @@ describe('sayHello', () => {
 log_result
 
 log_action 'Run jest tests'
-npx jest
+npm test
 log_result
 
 log_action 'Run typescript file'
-npx ts-node src/index.ts
+npm start
 log_result
