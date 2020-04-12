@@ -1,5 +1,9 @@
 ## Prerequisites
 
+#### Node
+
+I am using [Node Version Manager](https://github.com/nvm-sh/nvm) and the latest LTS
+
 #### ESLint on VSCode
 
 Install [ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
