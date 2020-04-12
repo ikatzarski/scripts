@@ -21,11 +21,11 @@ curl -s https://raw.githubusercontent.com/ikatzarski/scripts/master/typescript/i
 ## Run .ts file
 
 ```bash
-yarn ts-node src/index.ts
+npx ts-node src/index.ts
 ```
 
 ## Run tets
 
 ```bash
-yarn jest
+npx jest
 ```
