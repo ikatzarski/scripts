@@ -79,7 +79,7 @@ echo '{
 log_result
 
 log_action 'Install jest, the jest types and ts-jest as dev dependencies'
-npm i -D @types/jest ts-jest
+npm i -D jest @types/jest ts-jest
 log_result
 
 log_action 'Create jest config file'
