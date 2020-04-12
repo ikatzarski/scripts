@@ -27,11 +27,10 @@ npm start
 ## Run specific .ts file
 
 ```bash
-cd src
-npx ts-node index.ts
+npx ts-node src/index.ts
 ```
 
-## Run tets
+## Run all tests
 
 ```bash
 npm test
