@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  ans-master:
+    build:
+      context: .
+      dockerfile: Dockerfile.master
+    image: ans-master
+    container_name: ans-master
+    tty: true
+    networks:
+      - sshaccess
+    ports:
+      - "8001:22"
+    volumes:
+      - ./shared:/tmp/shared
+  ans-slave:
+    build:
+      context: .
+      dockerfile: Dockerfile.slave
+    image: ans-slave
+    container_name: ans-slave
+    tty: true
+    networks:
+      - sshaccess
+    ports:
+      - "8002:22"
+    volumes:
+      - ./shared:/tmp/shared
+
+networks:
+  sshaccess:
