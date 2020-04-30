@@ -44,6 +44,12 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 This will add the ssh key of ans-slave to the known_hosts of ans-master.
 
+#### Run a sample ansible playbook
+
+```bash
+ansible-playbook -u root /tmp/shared/playbook.yml
+```
+
 #### Resources
 
 More info on how to set up passwordless ssh:
