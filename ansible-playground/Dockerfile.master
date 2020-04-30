@@ -1,20 +1,18 @@
 FROM ubuntu
 RUN echo '===== Update master =====' && \
 apt update && \
+echo '===== Install ssh =====' && \
+apt install -y ssh && \
 echo '===== Install vim =====' && \
 apt install -y vim && \
-echo '===== Install software-properties-common =====' && \
-apt install -y software-properties-common && \
-echo '===== Remove ansible repo =====' && \
-apt-add-repository -r -y ppa:ansible/ansible && \
-echo '===== Update master =====' && \
-apt update -q && \
-echo '===== Add ansible repo =====' && \
-apt-add-repository -y ppa:ansible/ansible && \
-echo '===== Update master =====' && \
-apt update && \
+echo '===== Install pip3 =====' && \
+apt install -y python3-pip && \
 echo '===== Install ansible =====' && \
-apt install -y ansible && \
+pip3 install ansible && \
+echo '===== Create /etc/ansible dir =====' && \
+mkdir /etc/ansible && \
+echo '===== Create /etc/ansible/hosts file =====' && \
+touch /etc/ansible/hosts && \
 echo '===== Update ansible hosts ====='
 RUN ["/bin/bash", "-c", "echo -e '[playground]\nans-slave' >> /etc/ansible/hosts"]
 EXPOSE 22
