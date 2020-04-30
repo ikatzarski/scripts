@@ -43,3 +43,9 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 
 This will add the ssh key of ans-slave to the known_hosts of ans-master.
+
+#### Resources
+
+More info on how to set up passwordless ssh:
+- [1](https://www.linuxbabe.com/linux-server/setup-passwordless-ssh-login)
+- [2](https://linuxize.com/post/how-to-setup-passwordless-ssh-login/)
