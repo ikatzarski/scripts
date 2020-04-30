@@ -6,7 +6,5 @@ apt install -y ssh && \
 echo '===== Install vim =====' && \
 apt install -y vim && \
 echo '===== PermitRootLogin in sshd_config =====' && \
-echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && \
-echo '===== Set password ====='
-RUN ["/bin/bash", "-c", "echo -e 'password\npassword' | passwd"]
+echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 EXPOSE 22
