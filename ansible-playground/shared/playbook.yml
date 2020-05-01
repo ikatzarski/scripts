@@ -1,3 +1,4 @@
+---
 - name: Set up NTP on all servers.
   hosts: all
   become: yes
