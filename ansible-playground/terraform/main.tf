@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_key_pair" "ansible_slave_key" {
   key_name   = "ansible-slave-key"
-  public_key = file("~/.ssh/pub-ansible-slave.pem")
+  public_key = file("~/.ssh/ansible-slave.pub")
 }
 
 resource "aws_instance" "ubuntu_slave_1" {
