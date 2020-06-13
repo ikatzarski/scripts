@@ -1,0 +1,11 @@
+all:
+  hosts:
+    <ansible-ubuntu-slave-1 public dns>:
+    <ansible-ubuntu-slave-2 public dns>:
+  children:
+    slave1:
+      hosts:
+        <ansible-ubuntu-slave-1 public dns>:
+    slave2:
+      hosts:
+        <ansible-ubuntu-slave-2 public dns>:

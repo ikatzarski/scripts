@@ -1,12 +1,8 @@
-## Prerequisites and Info
+## Info
 
-Terraform is used to generate AWS EC2 instances.
+`main.tf` generates two AWS EC2 instances. They can be used as a playground to configure with Ansible.
 
-Use the EC2 instances as a playground to configure with Ansible.
-
-Generate a ssh key pair to run Ansible and to ssh into the EC2 instances.
-
-`main.tf` requires a ssh key
+`main.tf` and `ansible-playground` require a ssh key.
 
 ## SSH
 
@@ -27,4 +23,20 @@ chmod 400 ~/.ssh/ansible-slave.pub
 
 ```sh
 ssh -i ~/.ssh/ansible-slave ubuntu@<public_dns/ip>
+```
+
+## Ansible
+
+#### Setup ansible inventory
+
+Copy Slave1 and Slave2's public DNS from the `terraform apply` output.
+
+Replace `<ansible-ubuntu-slave-1 public dns>` and `<ansible-ubuntu-slave-2 public dns>` in `inventory.yml` with the relevant public DNS.
+
+#### Run ansible playbook
+
+```sh
+cd ansible
+
+ansible-playbook --private-key ~/.ssh/ansible-slave -i inventory.yml playbook.yml
 ```

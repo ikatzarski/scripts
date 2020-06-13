@@ -27,12 +27,12 @@ resource "aws_instance" "ubuntu_slave_2" {
   }
 }
 
-  output "slave1_public_dns" {
-    value       = aws_instance.ubuntu_slave_1.public_dns
-    description = "Slave1's public DNS"
-  }
+output "slave1_public_dns" {
+  value       = aws_instance.ubuntu_slave_1.public_dns
+  description = "Slave1's public DNS"
+}
 
-  output "slave2_public_dns" {
-    value       = aws_instance.ubuntu_slave_2.public_dns
-    description = "Slave2's public DNS"
-  }
+output "slave2_public_dns" {
+  value       = aws_instance.ubuntu_slave_2.public_dns
+  description = "Slave2's public DNS"
+}
