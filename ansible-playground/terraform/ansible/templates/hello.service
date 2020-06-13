@@ -1,0 +1,14 @@
+[Unit]
+Description=Hello World Deno Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=ubuntu
+ExecStart=/home/ubuntu/.deno/bin/deno run --allow-net /home/ubuntu/server/hello.ts
+
+[Install]
+WantedBy=multi-user.target
