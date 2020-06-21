@@ -2,37 +2,37 @@ provider "aws" {
   region = "eu-west-2"
 }
 
-resource "aws_key_pair" "ansible_slave_key" {
-  key_name   = "ansible-slave-key"
-  public_key = file("~/.ssh/ansible-slave.pub")
+resource "aws_key_pair" "ansible_host_key" {
+  key_name   = "ansible-host-key"
+  public_key = file("~/.ssh/ansible-host.pub")
 }
 
-resource "aws_instance" "ubuntu_slave_1" {
+resource "aws_instance" "ubuntu_host_1" {
   ami           = "ami-082bcf37bf94b4417"
   instance_type = "t2.micro"
-  key_name      = "ansible-slave-key"
+  key_name      = "ansible-host-key"
 
   tags = {
-    Name = "ansible-ubuntu-slave-1"
+    Name = "ansible-ubuntu-host-1"
   }
 }
 
-resource "aws_instance" "ubuntu_slave_2" {
+resource "aws_instance" "ubuntu_host_2" {
   ami           = "ami-082bcf37bf94b4417"
   instance_type = "t2.micro"
-  key_name      = "ansible-slave-key"
+  key_name      = "ansible-host-key"
 
   tags = {
-    Name = "ansible-ubuntu-slave-2"
+    Name = "ansible-ubuntu-host-2"
   }
 }
 
-output "slave1_public_dns" {
-  value       = aws_instance.ubuntu_slave_1.public_dns
-  description = "Slave1's public DNS"
+output "host1_public_dns" {
+  value       = aws_instance.ubuntu_host_1.public_dns
+  description = "Host1's public DNS"
 }
 
-output "slave2_public_dns" {
-  value       = aws_instance.ubuntu_slave_2.public_dns
-  description = "Slave2's public DNS"
+output "host2_public_dns" {
+  value       = aws_instance.ubuntu_host_2.public_dns
+  description = "Host2's public DNS"
 }

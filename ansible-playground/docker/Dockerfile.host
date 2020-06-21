@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN echo '===== Update slave =====' && \
+RUN echo '===== Update apt =====' && \
 apt update && \
 echo '===== Install ssh =====' && \
 apt install -y ssh && \

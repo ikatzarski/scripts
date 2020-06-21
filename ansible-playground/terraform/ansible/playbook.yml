@@ -20,7 +20,7 @@
       name: unzip
       state: present
 
-- hosts: slave1
+- hosts: host1
   remote_user: ubuntu
 
   tasks:

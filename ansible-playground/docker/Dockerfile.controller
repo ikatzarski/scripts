@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN echo '===== Update master =====' && \
+RUN echo '===== Update apt =====' && \
 apt update && \
 echo '===== Install ssh =====' && \
 apt install -y ssh && \
@@ -14,5 +14,5 @@ mkdir /etc/ansible && \
 echo '===== Create /etc/ansible/hosts file =====' && \
 touch /etc/ansible/hosts && \
 echo '===== Update ansible hosts ====='
-RUN ["/bin/bash", "-c", "echo -e '[playground]\nans-slave' >> /etc/ansible/hosts"]
+RUN ["/bin/bash", "-c", "echo -e '[playground]\nans-host' >> /etc/ansible/hosts"]
 EXPOSE 22

@@ -9,34 +9,34 @@
 #### Generate ssh key pair
 
 ```ssh
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/ansible-slave -N ''
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/ansible-host -N ''
 ```
 
 #### Change the files permissions of the key pair
 
 ```ssh
-chmod 400 ~/.ssh/ansible-slave
-chmod 400 ~/.ssh/ansible-slave.pub
+chmod 400 ~/.ssh/ansible-host
+chmod 400 ~/.ssh/ansible-host.pub
 ```
 
 #### SSH into an EC2 instance
 
 ```sh
-ssh -i ~/.ssh/ansible-slave ubuntu@<public_dns/ip>
+ssh -i ~/.ssh/ansible-host ubuntu@<public_dns/ip>
 ```
 
 ## Ansible
 
 #### Setup ansible inventory
 
-Copy Slave1 and Slave2's public DNS from the `terraform apply` output.
+Copy Host1 and Host2's public DNS from the `terraform apply` output.
 
-Replace `<ansible-ubuntu-slave-1 public dns>` and `<ansible-ubuntu-slave-2 public dns>` in `inventory.yml` with the relevant public DNS.
+Replace `<ansible-ubuntu-host-1 public dns>` and `<ansible-ubuntu-host-2 public dns>` in `inventory.yml` with the relevant public DNS.
 
 #### Run ansible playbook
 
 ```sh
 cd ansible
 
-ansible-playbook --private-key ~/.ssh/ansible-slave -i inventory.yml playbook.yml
+ansible-playbook --private-key ~/.ssh/ansible-host -i inventory.yml playbook.yml
 ```
