@@ -2,3 +2,7 @@
 .terraform
 *.tfstate
 *.tfstate.backup
+
+# OSX
+.DS_Store
+
