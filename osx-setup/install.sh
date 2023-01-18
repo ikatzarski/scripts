@@ -23,6 +23,7 @@ install_languages() {
 
 install_platform_tools() {
   brew install warrensbox/tap/tfswitch
+  brew install terraform-docs
   brew install awscli
   brew install azure-cli
 }
