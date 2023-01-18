@@ -47,7 +47,7 @@ configure_ssh() {
   ssh-keygen -t ed25519 -f $HOME/.ssh/github_id_ed25519 -N '' -C "10603133+ikatzarski@users.noreply.github.com"
   eval "$(ssh-agent -s)"
   mkdir -p $HOME/.ssh && touch $HOME/.ssh/config &&
-    echo 'Host *.github.com
+    echo 'Host github.com
     AddKeysToAgent yes
     UseKeychain yes
     IdentityFile ~/.ssh/github_id_ed25519' >$HOME/.ssh/config
