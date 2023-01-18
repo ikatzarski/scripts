@@ -96,7 +96,6 @@ run() {
     ?) print_help && exit 1 ;;
     esac
   done
-  # shift "$(($OPTIND - 1))"
 }
 
 run "$@"
