@@ -10,6 +10,7 @@ install_dev_tools() {
   brew install --cask visual-studio-code
   brew install --cask docker
   brew install git
+	brew install watch
 }
 
 install_languages() {
