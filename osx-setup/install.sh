@@ -10,7 +10,7 @@ install_dev_tools() {
   brew install --cask visual-studio-code
   brew install --cask docker
   brew install git
-	brew install watch
+  brew install watch
 }
 
 install_languages() {
@@ -26,6 +26,9 @@ install_platform_tools() {
   brew install terraform-docs
   brew install awscli
   brew install azure-cli
+  brew install kind
+  brew install kubectl
+  brew install helm
 }
 
 install_other_tools() {
