@@ -29,6 +29,8 @@ install_platform_tools() {
   brew install kind
   brew install kubectl
   brew install helm
+  brew install yq
+  brew install jq
 }
 
 install_other_tools() {
