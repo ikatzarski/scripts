@@ -1,67 +1,89 @@
-#!/bin/bash
+#!/bin/bash -eu
+
+log() {
+  local message="$1"
+  local func_name="${FUNCNAME[1]}"
+  local date="$(date "+%F %T")"
+  echo "=> [$date] [$func_name]: $message"
+}
 
 install_core_tools() {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  log "Core tools installed."
 }
 
 install_dev_tools() {
-  brew install --cask iterm2
+  brew install --cask warp
   brew install --cask visual-studio-code
   brew install --cask docker
   brew install git
   brew install watch
+  brew install jq
+  brew install yq
+  brew install bat
+  brew install btop
+  log "Dev tools installed."
 }
 
 install_languages() {
   brew install go
-  brew install rustup-init
   brew install pyenv
-  brew install nvm && mkdir -p ~/.nvm
-  curl -s "https://get.sdkman.io" | bash
+  brew install pyenv-virtualenv
+  log "Languages installed."
 }
 
 install_platform_tools() {
   brew install warrensbox/tap/tfswitch
   brew install terraform-docs
+  brew install checkov
   brew install awscli
-  brew install azure-cli
   brew install kind
   brew install kubectl
   brew install helm
-  brew install yq
-  brew install jq
+  brew tap hashicorp/tap
+  brew install hashicorp/tap/hashicorp-vagrant
+  brew install hashicorp/tap/packer
+  brew install --cask virtualbox
+  log "Platform tools installed."
 }
 
 install_other_tools() {
   brew install --cask google-chrome
-  brew install --cask firefox
   brew install --cask slack
-  brew install --cask spotify
+  log "Other tools installed."
 }
 
 configure_vim() {
-  touch $HOME/.vimrc &&
-    echo 'syntax on
+  local vimrc_file="$HOME/.vimrc"
+
+  touch "$vimrc_file"
+  echo 'syntax on
   color desert
   set number
   set relativenumber
   set hlsearch
-  set tabstop=2' >$HOME/.vimrc
+  set tabstop=2' >"$vimrc_file"
+  log "Vim configured."
 }
 
 configure_ssh() {
-  ssh-keygen -t ed25519 -f $HOME/.ssh/github_id_ed25519 -N '' -C "10603133+ikatzarski@users.noreply.github.com"
+  local ssh_folder="$HOME/.ssh"
+  local git_username="Ivan Katzarski"
+  local git_email="10603133+ikatzarski@users.noreply.github.com"
+
+  mkdir -p "$ssh_folder"
+  ssh-keygen -t ed25519 -f "$ssh_folder"/github_id_ed25519 -N '' -C "$git_email"
   eval "$(ssh-agent -s)"
-  mkdir -p $HOME/.ssh && touch $HOME/.ssh/config &&
-    echo 'Host github.com
+  touch "$ssh_folder"/config
+  echo 'Host github.com
     AddKeysToAgent yes
     UseKeychain yes
-    IdentityFile ~/.ssh/github_id_ed25519' >$HOME/.ssh/config
-  ssh-add --apple-use-keychain $HOME/.ssh/github_id_ed25519
-  pbcopy <~/.ssh/github_id_ed25519.pub
-  git config --global user.name "Ivan Katzarski"
-  git config --global user.email "10603133+ikatzarski@users.noreply.github.com"
+    IdentityFile ~/.ssh/github_id_ed25519' >"$ssh_folder"/config
+  ssh-add --apple-use-keychain "$ssh_folder"/github_id_ed25519
+  git config --global user.name "$git_username"
+  git config --global user.email "$git_email"
+  log "SSH configured."
 }
 
 configure_new_system() {
@@ -72,6 +94,7 @@ configure_new_system() {
   install_other_tools
   configure_vim
   configure_ssh
+  log "New system configured."
 }
 
 install_all_tools() {
@@ -79,6 +102,7 @@ install_all_tools() {
   install_languages
   install_platform_tools
   install_other_tools
+  log "All tools installed."
 }
 
 print_help() {
